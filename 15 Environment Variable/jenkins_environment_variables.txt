@@ -1,0 +1,60 @@
+
+===============================
+JENKINS ENVIRONMENT VARIABLES LIST
+===============================
+
+--- COMMON VARIABLES ---
+BUILD_NUMBER                = The current build number (e.g., 42)
+BUILD_ID                    = Same as BUILD_NUMBER but as a string
+BUILD_DISPLAY_NAME          = Display name of the build (e.g., "#42")
+JOB_NAME                    = Name of the Jenkins job (without folder path)
+JOB_BASE_NAME               = Last part of the job name (if in folders)
+BUILD_TAG                   = Unique tag like jenkins-${JOB_NAME}-${BUILD_NUMBER}
+BUILD_URL                   = Full URL to this build
+JOB_URL                     = URL to the job page
+JENKINS_URL                 = Root URL of the Jenkins server
+WORKSPACE                   = Path to the job’s workspace directory
+EXECUTOR_NUMBER             = Number of the executor running this build
+NODE_NAME                   = Name of the node (agent) running this build
+NODE_LABELS                 = Labels assigned to the node
+BUILD_USER                  = The user who triggered the build (requires plugin)
+BUILD_USER_EMAIL            = Email of the user who triggered the build
+BUILD_USER_ID               = Jenkins user ID of the trigger
+
+--- GIT / SCM VARIABLES ---
+GIT_COMMIT                  = The commit hash being built
+GIT_BRANCH                  = The branch name being built
+GIT_URL                     = Git repository URL
+GIT_PREVIOUS_COMMIT         = Previous commit in the build
+GIT_PREVIOUS_SUCCESSFUL_COMMIT = Last successful commit
+GIT_AUTHOR_NAME             = Author of the latest commit
+GIT_COMMITTER_NAME          = Committer of the latest commit
+GIT_COMMITTER_EMAIL         = Committer email
+
+--- PIPELINE-SPECIFIC VARIABLES ---
+env.BUILD_NUMBER            = Same as BUILD_NUMBER (Groovy syntax)
+env.JOB_NAME                = Job name (Groovy)
+currentBuild.result         = Status of current build (SUCCESS, FAILURE, etc.)
+params.<PARAM_NAME>         = Access to parameterized build variables
+
+Example:
+    echo "Hello ${params.FirstName}"
+
+--- PARAMETERIZED BUILD VARIABLES ---
+If you create parameters in Jenkins (e.g. String Parameter, Choice Parameter), they automatically become environment variables.
+
+Example:
+    Parameter Name : FirstName
+    Example Value  : Riyaz
+    Usage in Script: echo "Hello $FirstName"
+
+Note: Use "$FirstName" or "${FirstName}" — not "{$FirstName}"
+
+--- OTHER USEFUL VARIABLES ---
+HUDSON_HOME                 = Jenkins home directory
+JENKINS_HOME                = Jenkins home directory path
+BUILD_TIMESTAMP             = Timestamp of the build
+RUN_CHANGES_DISPLAY_URL     = URL showing changes for this build
+RUN_DISPLAY_URL             = URL of the build page
+CHANGE_AUTHOR               = Author of PR (for multibranch pipeline)
+CHANGE_BRANCH               = Branch from which PR originated

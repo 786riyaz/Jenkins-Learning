@@ -1,0 +1,112 @@
+Jenkins Runs on port 8080 by default.
+
+
+Jenkins is an **open-source automation server** widely used in **software development** to automate parts of the **build, testing, and deployment process**. It helps developers integrate changes to projects more easily and deliver software reliably and quickly — this practice is known as **Continuous Integration (CI)** and **Continuous Delivery (CD)**, or simply **CI/CD**.
+
+---
+
+### 🧩 What Jenkins Is
+
+* **Jenkins** is a **Java-based automation tool**.
+* It can **build, test, and deploy** your code automatically.
+* It supports **plugins** for almost any technology — Git, Docker, Kubernetes, AWS, Maven, etc.
+* It provides a **web interface (dashboard)** for managing automation jobs.
+
+---
+
+### 🚀 How Jenkins Helps in Software Development
+
+#### 1. **Continuous Integration (CI)**
+
+* Every time a developer pushes code to a repository (like GitHub), Jenkins:
+
+  * Pulls the latest code.
+  * Builds the application.
+  * Runs automated tests.
+* This ensures that code changes don’t break the project.
+
+✅ *Example:*
+When a developer commits code, Jenkins automatically builds and runs tests — if something fails, the developer gets notified immediately.
+
+---
+
+#### 2. **Continuous Delivery / Deployment (CD)**
+
+* After successful builds and tests, Jenkins can **automatically deploy** the software to:
+
+  * A staging environment (for testing)
+  * Or directly to production servers.
+
+✅ *Example:*
+When all tests pass, Jenkins can deploy the updated web app to a cloud server or container without manual intervention.
+
+---
+
+#### 3. **Automation of Repetitive Tasks**
+
+Jenkins can automate tasks like:
+
+* Compiling source code
+* Packaging binaries (e.g., `.jar`, `.war`, `.zip`)
+* Running unit or integration tests
+* Generating reports (coverage, build status)
+* Sending email or Slack notifications
+
+---
+
+#### 4. **Pipeline as Code**
+
+* Jenkins allows you to define **pipelines** in code (`Jenkinsfile`).
+* You can version-control your CI/CD process along with your source code.
+
+```groovy
+pipeline {
+  agent any
+  stages {
+    stage('Build') {
+      steps { echo 'Building...' }
+    }
+    stage('Test') {
+      steps { echo 'Running tests...' }
+    }
+    stage('Deploy') {
+      steps { echo 'Deploying application...' }
+    }
+  }
+}
+```
+
+---
+
+#### 5. **Integration with Tools**
+
+Jenkins can integrate with:
+
+* **Version Control Systems:** Git, GitHub, GitLab, Bitbucket
+* **Build Tools:** Maven, Gradle, npm
+* **Testing Frameworks:** JUnit, Selenium, pytest
+* **Cloud/Container Tools:** Docker, Kubernetes, AWS, Azure
+
+---
+
+### ⚙️ Jenkins Workflow Summary
+
+1. **Developer commits code** → GitHub
+2. **Jenkins detects change** (via webhook or schedule)
+3. **Jenkins builds** the application
+4. **Runs tests**
+5. **Packages artifacts**
+6. **Deploys** to testing or production environment
+7. **Reports results** (email/Slack/dashboard)
+
+---
+
+### 🏁 Benefits
+
+* Early detection of integration issues
+* Faster feedback for developers
+* Automated deployment → fewer human errors
+* Centralized build and deployment process
+* Scalable and customizable with plugins
+
+---
