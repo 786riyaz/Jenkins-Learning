@@ -1,0 +1,20 @@
+Jenkins
+🔹 Core Concepts
+CI/CD pipeline concept
+Jenkins architecture (Master/Agent)
+Freestyle vs Pipeline jobs
+Jenkinsfile syntax (declarative pipeline)
+Triggers (GitHub push, cron, etc.)
+Integration with Docker, Git, and AWS
+Using plugins (Docker, Node, Maven, etc.)
+Credentials management
+Pipeline stages: Build → Test → Deploy
+Declarative syntax example:
+pipeline {
+  agent any
+  stages {
+    stage('Build') { steps { sh 'npm install' } }
+    stage('Test') { steps { sh 'npm test' } }
+    stage('Deploy') { steps { sh 'docker build .' } }
+  }
+}
