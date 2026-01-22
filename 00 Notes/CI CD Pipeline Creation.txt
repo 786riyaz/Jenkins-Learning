@@ -1,0 +1,11 @@
+To create a CI/CD pipeline using Jenkins and AWS, I usually start by setting up Jenkins on an EC2 instance. After installing Java and Jenkins, I open port 8080 so I can access the Jenkins dashboard.
+
+Next, I connect Jenkins with my GitHub repository using the Git plugin, so every time I push new code, Jenkins automatically triggers a build.
+
+Then, I create a Jenkins pipeline with stages like checkout, build, test, and deploy. In the build stage, Jenkins installs dependencies and runs tests to make sure everything works properly.
+
+Once the build is successful, Jenkins deploys the application to AWS — depending on the project, it could be to an EC2 instance, an S3 bucket, or even Elastic Beanstalk.
+
+Finally, I set up automation triggers and notifications, so the whole process — from code push to deployment — happens automatically.
+
+This ensures faster delivery, fewer manual steps, and a reliable continuous integration and deployment process.
