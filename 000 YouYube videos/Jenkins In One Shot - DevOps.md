@@ -1,3 +1,8 @@
+Jenkins In One Shot | DevOps Production CICD Pipelines [Hindi]
+https://www.youtube.com/watch?v=XaSdKR2fOU4&t=335s
+TrainWithShubham
+
+
 📍00:00 Content 
 
 📍2:00 Introduction to Jenkins & CI CD
